@@ -9,10 +9,10 @@ import objects.Professor;
  */
 public class ProfessorAccions extends Professor{
     
-    public ProfessorAccions(String nom, String[] assignatura, boolean volServei, int minuts){
+    public ProfessorAccions(String nom, String[] assignatures, boolean volServei, int minuts){
         
         this.nom = nom;
-        this.assignatura = assignatura;
+        this.assignatures = assignatures;
         this.volServei = volServei;
         this.minutsPreAvis = minuts;
         
@@ -33,5 +33,20 @@ public class ProfessorAccions extends Professor{
         LlistaProfessorsAmbServei.profsAmbServei.forEach(x -> System.out.println(x.nom));
         
     } 
+    
+    public String recorrerArray(){
+        
+        for(int i = 0; i<assignatures.length; i++){
+            
+            if(assignatures[i].equalsIgnoreCase(EscollirAssignatura.EscollirAssignatura(i, assignatures))){//Si és la mateixa assignatura que toca ara
+                
+                return nom;
+                
+            }
+            
+        }
+        
+        return null;
+    }
     
 }

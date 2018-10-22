@@ -1,5 +1,7 @@
 package other;
 
+import main.main;
+
 /**
  *
  * @author mblan
@@ -8,7 +10,7 @@ public class RecorrerLLista {
     
     public static void avaluarProfessorsAmbServei(){
         
-        LlistaProfessors.profs.forEach(x -> x.volServei());
+        main.profs.forEach(x -> x.volServei());
         
     }
     

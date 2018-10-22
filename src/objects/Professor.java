@@ -7,7 +7,7 @@ package objects;
 public class Professor{
     
     protected String nom;
-    protected String[] assignatura;
+    protected String[] assignatures;
     public int minutsPreAvis;
     protected boolean volServei;
 
