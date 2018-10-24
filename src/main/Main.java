@@ -2,14 +2,13 @@ package main;
 
 import java.util.ArrayList;
 import java.util.List;
-import objects.Professor;
 import other.ProfessorAccions;
 
 /**
  *
  * @author mblan
  */
-public class main {
+public class Main {
 
     public static List<ProfessorAccions> profs = new ArrayList<>();
     
@@ -26,12 +25,6 @@ public class main {
         String mariaRojo_Assignatures[] = {"Castellà"};
         ProfessorAccions Maria_Rojo = new ProfessorAccions("María Rojo", mariaRojo_Assignatures, false, 0);
         profs.add (Maria_Rojo);
-        
-    }
-    
-    public static void LlistarAssignatures(){
-        
-        
         
     }
 

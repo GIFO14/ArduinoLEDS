@@ -34,19 +34,22 @@ public class ProfessorAccions extends Professor{
         
     } 
     
-    public String recorrerArray(){
+    public void recorrerArray(){
         
         for(int i = 0; i<assignatures.length; i++){
             
-            if(assignatures[i].equalsIgnoreCase(EscollirAssignatura.EscollirAssignatura(i, assignatures))){//Si és la mateixa assignatura que toca ara
+            if(assignatures[i].equalsIgnoreCase(LlistaAssignatures.horari[LlistaAssignatures.n])){//Si és la mateixa assignatura que toca ara
                 
-                return nom;
+                if(volServei){
+                
+                    //S'activi temporitzador
+                    
+                }
                 
             }
             
         }
-        
-        return null;
+
     }
     
 }

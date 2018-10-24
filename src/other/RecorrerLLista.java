@@ -1,6 +1,6 @@
 package other;
 
-import main.main;
+import main.Main;
 
 /**
  *
@@ -10,7 +10,7 @@ public class RecorrerLLista {
     
     public static void avaluarProfessorsAmbServei(){
         
-        main.profs.forEach(x -> x.volServei());
+        Main.profs.forEach(x -> x.volServei());
         
     }
     

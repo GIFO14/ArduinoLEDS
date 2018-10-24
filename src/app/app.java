@@ -1,6 +1,6 @@
 package app;
 
-import main.main;
+import main.Main;
 import other.ProfessorAccions;
 import other.RecorrerLLista;
 
@@ -12,7 +12,7 @@ public class app {
 
     public static void main(String[] args) {
         
-        main.LlistarProfessors();
+        Main.LlistarProfessors();
         RecorrerLLista.avaluarProfessorsAmbServei();
         ProfessorAccions.veure();
         
