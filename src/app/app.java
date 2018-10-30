@@ -12,9 +12,9 @@ public class app {
 
     public static void main(String[] args) {
         
-        Main.LlistarProfessors();
-        RecorrerLLista.avaluarProfessorsAmbServei();
-        ProfessorAccions.veure();
+        /*Main.LlistarProfessors();
+        RecorrerLLista.avaluarProfessorsAmbServei();*/
+        System.out.println(0%2);
         
     }
     

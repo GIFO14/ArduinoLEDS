@@ -1,6 +1,7 @@
 package other;
 
 import afegirMinuts.afegirMinuts;
+import java.util.concurrent.TimeUnit;
 import objects.Professor;
 
 /**
@@ -28,17 +29,32 @@ public class ProfessorAccions extends Professor{
         
     }
     
-    public static void veure(){
-        
-        LlistaProfessorsAmbServei.profsAmbServei.forEach(x -> System.out.println(x.nom));
-        
-    } 
-    
     public void recorrerArray(){
         
-        for(int i = 0; i<assignatures.length; i++){
+        for(short i = 0; i<assignatures.length; i++){
             
-            if(assignatures[i].equalsIgnoreCase(LlistaAssignatures.horari[LlistaAssignatures.n])){//Si és la mateixa assignatura que toca ara
+            short n = 0, m = 25;
+            
+            if(i != 0 && i % 2 == 0){
+            
+                if(n == 1){
+                    
+                    m = 20;
+                    
+                }
+                
+                try{
+                    
+                    TimeUnit.MINUTES.sleep(m);
+                    n++;
+                    
+                }catch(Exception e){
+                    
+                    System.out.println(e);
+                    
+                }
+            
+            } else if (assignatures[i].equalsIgnoreCase(LlistaAssignatures.horari[LlistaAssignatures.n])){//Si és la mateixa assignatura que toca ara
                 
                 if(volServei){
                 
@@ -47,7 +63,7 @@ public class ProfessorAccions extends Professor{
                 }
                 
             }
-            
+              
         }
 
     }
