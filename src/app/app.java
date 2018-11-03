@@ -25,10 +25,10 @@ public class app {
             
             LlistaAssignatures.SaberProfessorAssignaturaActual();//Assignatura 1 del dia
             LlistaAssignatures.SaberProfessorAssignaturaActual();//Assignatura 2 del dia
-            //LlistaAssignatures.TimerPati();
+            LlistaAssignatures.TimerPati();
             LlistaAssignatures.SaberProfessorAssignaturaActual();//Assignatura 3 del dia
             LlistaAssignatures.SaberProfessorAssignaturaActual();//Assignatura 4 del dia
-            //LlistaAssignatures.TimerPati();
+            LlistaAssignatures.TimerPati();
             LlistaAssignatures.SaberProfessorAssignaturaActual();//Assignatura 5 del dia
             LlistaAssignatures.SaberProfessorAssignaturaActual();//Assignatura 6 del dia
             LlistaAssignatures.TimerDescansTarda();

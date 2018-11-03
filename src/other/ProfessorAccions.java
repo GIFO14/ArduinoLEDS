@@ -40,7 +40,7 @@ public class ProfessorAccions extends Professor {
                 if (volServei) {
 
                     System.out.println("Sóc " + nom + " i vull servei amb l'assignatura: " + assignatures[i]);
-                    //checkVolServei = true;
+
                     //S'activi temporitzador
 
                 } else {
@@ -49,16 +49,14 @@ public class ProfessorAccions extends Professor {
 
                     try {
 
-                        //TimeUnit.HOURS.sleep(1);
-                        TimeUnit.SECONDS.sleep(3);
+                        TimeUnit.HOURS.sleep(1);
 
                     } catch (Exception e) {
 
                         System.out.println(e);
 
                     }
-
-                    //checkVolServei = false;
+                    
                 }
                 
             } else if (LlistaAssignatures.horari[LlistaAssignatures.n] == null){
