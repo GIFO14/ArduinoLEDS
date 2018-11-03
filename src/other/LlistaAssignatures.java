@@ -11,7 +11,7 @@ public class LlistaAssignatures {
 
     public static String[] horari = new String[30];
 
-    public static short n = 0;
+    public static short n, i = 0;
 
     public static void EstablirHorari(/*Dilluns*/String a1, String a2,/*Pati*/ String a3, String a4,/*Pati*/ String a5, String a6,
             /*Dimarts*/ String a7, String a8,/*Pati*/ String a9, String a10,/*Pati*/ String a11, String a12,
@@ -55,29 +55,85 @@ public class LlistaAssignatures {
     public static void SaberProfessorAssignaturaActual() {
 
         Main.profs.forEach(x -> x.recorrerArray());
+        n++;
 
     }
 
-    public void Timer() {
+    public static void TimerPati() {
 
-        if (n <= 30) {
-            
+        short m = 25;
+
+        if (n != 0 && n % 2 == 0) {
+
+            if (i == 1) {
+
+                m = 20;
+
+            }
+
             try {
 
-                TimeUnit.HOURS.sleep(1);
+                TimeUnit.MINUTES.sleep(m);
+                i++;
 
-            } catch (InterruptedException e) {
+            } catch (Exception e) {
 
                 System.out.println(e);
 
             }
 
-            n++;
+        } else {
+
+            System.out.println("No toca pati.");
+
+        }
+
+    }
+
+    public static void TimerDescansTarda() {
+
+        if ((n + 1) % 6 == 0) {
+
+            try {
+
+                TimeUnit.HOURS.sleep(17);
+                TimeUnit.MINUTES.sleep(15);
+                i = 0;
+
+            } catch (Exception e) {
+
+                System.out.println(e);
+
+            }
+
+        } else {
+
+            System.out.println("No toca decans de tarda.");
+
+        }
+
+    }
+
+    public static void TimerDecansCapDeSetmana() {
+
+        if (n == 30) {
+            
+            try {
+
+                TimeUnit.DAYS.sleep(2);
+                TimeUnit.HOURS.sleep(17);
+                TimeUnit.MINUTES.sleep(15);
+
+            } catch (Exception e) {
+
+                System.out.println(e);
+
+            }
             
         } else {
-            
-            System.out.println("Nombre del total d'assignatures aconseguit.");
-            
+
+            System.out.println("No toca cap de setmana.");
+
         }
 
     }

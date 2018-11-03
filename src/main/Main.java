@@ -11,6 +11,7 @@ import other.ProfessorAccions;
  */
 public class Main {
 
+    public static String portafoli = null, educacioFisica = null, emprenedoria = null;
     public static List<ProfessorAccions> profs = new ArrayList<>();
     
     public static void LlistarProfessors() {
@@ -24,14 +25,36 @@ public class Main {
         profs.add (David_Hugas);
 
         String annaMartinez_Assignatures[] = {"Anglès", "Emprenedoria", "Socials"};
-        ProfessorAccions Maria_Rojo = new ProfessorAccions("María Rojo", annaMartinez_Assignatures, true, 15);
-        profs.add (Maria_Rojo);
+        ProfessorAccions Anna_Martinez = new ProfessorAccions("Anna Martínez", annaMartinez_Assignatures, true, 15);
+        profs.add (Anna_Martinez);
+        
+        String ramon_Assignatures[] = {"Tutoria", "Educació Física"};
+        ProfessorAccions ramon = new ProfessorAccions("Ramón", ramon_Assignatures, true, 10);
+        profs.add (ramon);
+        
+        String estefania_Assignatures[] = {"Mates"};
+        ProfessorAccions estefania = new ProfessorAccions("Estefania", estefania_Assignatures, false, 0);
+        profs.add (estefania);
         
     }
     
     public static void EstablirHorari(){
         
-        LlistaAssignatures.EstablirHorari("Català", "Castellà", "Portafoli", "Tutoria", "Mates", "Socials", "Mates", "Informàtica i Tecnologia", "Física i Química", "Cinema i Escena", "Anglès", "Castellà", "Socials", a14, a15, a16, a17, a18, a19, a20, a21, a22, a23, a24, a25, a26, a27, a28, a29, a30);
+        LlistaAssignatures.EstablirHorari(
+                /*Dilluns*/
+                "Català", "Castellà", /*Pati*/portafoli, "Tutoria", /*Pati*/"Mates", "Socials", 
+                
+                /*Dimarts*/
+                "Mates", "Informàtica i Tecnologia", /*Pati*/"Llatí", "Francès", /*Pati*/"Anglès", "Castellà", 
+                
+                /*Dimecres*/
+                "Socials", educacioFisica, /*Pati*/"Anglès", "Mates", /*Pati*/"Català", "Llatí", 
+                
+                /*Dijous*/
+                emprenedoria, "Francès", /*Pati*/"Català", "Informàtica i Tecnologia", /*Pati*/"Castellà", "Socials", 
+                
+                /*Divendres*/
+                "Llatí", "Mates", /*Pati*/"Francès", "Anglès", /*Pati*/educacioFisica, "Informàtica i Tecnologia");
         
     }
 

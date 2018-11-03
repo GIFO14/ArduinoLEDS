@@ -8,64 +8,67 @@ import objects.Professor;
  *
  * @author mblan
  */
-public class ProfessorAccions extends Professor{
-    
-    public ProfessorAccions(String nom, String[] assignatures, boolean volServei, int minuts){
-        
+public class ProfessorAccions extends Professor {
+
+    public boolean checkVolServei;
+
+    public ProfessorAccions(String nom, String[] assignatures, boolean volServei, int minuts) {
+
         this.nom = nom;
         this.assignatures = assignatures;
         this.volServei = volServei;
         this.minutsPreAvis = minuts;
-        
+
     }
-    
+
     public void volServei() {
-        
-        if(volServei){
-            
+
+        if (volServei) {
+
             afegirMinuts.volServei(minutsPreAvis, this);
-            
-        }
-        
-    }
-    
-    public void recorrerArray(){
-        
-        for(short i = 0; i<assignatures.length; i++){
-            
-            short n = 0, m = 25;
-            
-            if(i != 0 && i % 2 == 0){
-            
-                if(n == 1){
-                    
-                    m = 20;
-                    
-                }
-                
-                try{
-                    
-                    TimeUnit.MINUTES.sleep(m);
-                    n++;
-                    
-                }catch(Exception e){
-                    
-                    System.out.println(e);
-                    
-                }
-            
-            } else if (assignatures[i].equalsIgnoreCase(LlistaAssignatures.horari[LlistaAssignatures.n])){//Si és la mateixa assignatura que toca ara
-                
-                if(volServei){
-                
-                    //S'activi temporitzador
-                    
-                }
-                
-            }
-              
+
         }
 
     }
-    
+
+    public void recorrerArray() {
+
+        for (short i = 0; i < assignatures.length; i++) {
+
+            if (i < assignatures.length && LlistaAssignatures.horari[LlistaAssignatures.n] != null && assignatures[i].equalsIgnoreCase(LlistaAssignatures.horari[LlistaAssignatures.n])) {//Si és la mateixa assignatura que toca ara
+
+                if (volServei) {
+
+                    System.out.println("Sóc " + nom + " i vull servei amb l'assignatura: " + assignatures[i]);
+                    //checkVolServei = true;
+                    //S'activi temporitzador
+
+                } else {
+
+                    System.out.println("Sóc " + nom + " i no vull servei amb l'assignatura: " + assignatures[i]);
+
+                    try {
+
+                        //TimeUnit.HOURS.sleep(1);
+                        TimeUnit.SECONDS.sleep(3);
+
+                    } catch (Exception e) {
+
+                        System.out.println(e);
+
+                    }
+
+                    //checkVolServei = false;
+                }
+                
+            } else if (LlistaAssignatures.horari[LlistaAssignatures.n] == null){
+                
+                System.out.println("Ara no toca cap assignatura...");
+                
+            }
+
+        }
+
+    }
+
 }
